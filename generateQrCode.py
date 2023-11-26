@@ -22,7 +22,7 @@ def main():
         os.makedirs(root_directory)
 
     # Caminho para o arquivo CSV
-    csv_file = 'users.csv'
+    csv_file = 'users_test.csv'
 
     with open(csv_file, 'r') as file:
         reader = csv.DictReader(file)
