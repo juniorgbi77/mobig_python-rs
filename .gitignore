@@ -20,3 +20,5 @@ yarn-error.log
 ./qrImages
 ./qrImages/*.png
 /qrImages/
+/temp/
+/qrImagesDone/

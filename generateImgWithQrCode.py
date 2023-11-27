@@ -51,19 +51,28 @@ def generate_qr_img(info, name, overlay_img_name, filename):
     img.save(filename, "PNG")
 
 
-def override_img(old_file, filename):
-    base = Image.open('base_img.png')
-    overlay_img = Image.open(old_file)
+def override_img(overlay_path, output_path):
+    # Abrir a imagem base (sem transparência)
+    base = Image.open('base_img_1.png')
 
-    new = Image.new("RGBA", overlay_img.size)
+    # Abrir a imagem de sobreposição (com transparência)
+    overlay_img = Image.open(overlay_path).convert("RGBA")
 
-    new.paste(overlay_img, (0, 0))
+    # Certificar-se de que ambas as imagens têm o mesmo tamanho
+    if base.size != overlay_img.size:
+        raise ValueError("As imagens devem ter o mesmo tamanho.")
 
-    # Compor a segunda imagem sobreposta à primeira
-    nova_imagem = Image.alpha_composite(new.convert("RGBA"), base.convert("RGBA"))
+    # Criar uma nova imagem
+    nova_imagem = Image.new("RGBA", base.size)
+
+    # Colar a imagem base
+    nova_imagem.paste(base, (0, 0))
+
+    # Colar a imagem de sobreposição com transparência
+    nova_imagem.paste(overlay_img, (0, 0), overlay_img)
 
     # Salvar a imagem resultante
-    new.save(filename, "PNG")
+    nova_imagem.save(output_path, "PNG")
 
 
 def main():
