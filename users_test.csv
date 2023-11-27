@@ -1,3 +1,3 @@
-"id","number","name","phone","age","city_id","created_at","updated_at","event_id","hash"
-"9","06001","Uilson jose da cruz junior","77998648358","22","6","2023-09-30 14:19:45","2023-11-21 13:23:06","0","cd953595c354c4f4c2189ba347456ba5"
-"10","06002","Daniel Jader Xavier Nascimento","77988244911","23","6","2023-10-01 04:21:46","2023-11-21 13:24:37","0","c5508dfccfa41a91f70842d8307b0283"
+"id","number","name","phone","age","city_id","created_at","updated_at","event_id","hash","city"
+"9","06001","Uilson jose da cruz junior","77998648358","22","6","2023-09-30 14:19:45","2023-11-21 13:23:06","0","cd953595c354c4f4c2189ba347456ba5","Guanambi"
+"10","06002","Daniel Jader Xavier Nascimento","77988244911","23","6","2023-10-01 04:21:46","2023-11-21 13:24:37","0","c5508dfccfa41a91f70842d8307b0283","Candiba"

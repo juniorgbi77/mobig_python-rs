@@ -29,16 +29,10 @@ def main():
         for row in reader:
             # Extrair informações necessárias do CSV
             number = row['number']
-            name = row['name']
-
-            # Tratamento do campo 'name'
-            names = name.lower().split()[:2]  # Convertendo para minúsculas e pegando os dois primeiros nomes
-            formatted_name = '_'.join(names)  # Unindo os nomes com '_'
-
             hash_value = row['hash']
 
             # Nome do arquivo da imagem
-            filename = f"{root_directory}{number}_{formatted_name}.png"
+            filename = f"{root_directory}{number}.png"
 
             # Gerar QR code com o valor de hash e salvar como imagem
             generate_qr_code(hash_value, filename)
